@@ -7,6 +7,7 @@ REM 提示用户选择包管理器
 echo 请选择包管理器：
 echo npm. npm
 echo pnpm. pnpm
+echo yarn. yarn
 set /p package_manager=请输入选项（npm 或 pnpm）: 
 
 for /f "tokens=*" %%v in ('%package_manager% -v') do set npm_version=%%v
@@ -24,7 +25,7 @@ REM 根据用户选择执行相应的命令
 IF /I "%package_manager%"=="npm" (
     set command=npm init vite@latest --
     set init=--yes
-) ELSE IF /I "%package_manager%"=="pnpm" (
+) ELSE  (
     set command=pnpm create vite
     set init= 
 ) 
