@@ -8,9 +8,10 @@ echo 请选择包管理器：
 echo npm. npm
 echo pnpm. pnpm
 echo yarn. yarn
-set /p package_manager=请输入选项（npm 或 pnpm）: 
+set /p package_manager=请输入选项（npm 或 pnpm 或 yarn）: 
 
 for /f "tokens=*" %%v in ('%package_manager% -v') do set npm_version=%%v
+REM 检查对应包管理器是否安装
 where %package_manager% > nul 2>nul
 if %errorlevel% neq 0 (
     cls
