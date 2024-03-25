@@ -1,5 +1,5 @@
 # tool_bat
-一些前端开发的工具批处理命令
+一些前端开发的批处理工具
 
 ### introduce
 | name | illustrate | use | file type|other
